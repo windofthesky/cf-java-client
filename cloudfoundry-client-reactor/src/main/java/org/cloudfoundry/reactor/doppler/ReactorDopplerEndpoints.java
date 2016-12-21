@@ -23,6 +23,7 @@ import org.cloudfoundry.doppler.RecentLogsRequest;
 import org.cloudfoundry.doppler.StreamRequest;
 import org.cloudfoundry.reactor.ConnectionContext;
 import org.cloudfoundry.reactor.TokenProvider;
+import org.cloudfoundry.reactor.util.MultipartCodec;
 import org.cloudfoundry.reactor.util.MultipartDecoderChannelHandler;
 import reactor.core.Exceptions;
 import reactor.core.publisher.Flux;
@@ -58,14 +59,17 @@ final class ReactorDopplerEndpoints extends AbstractDopplerOperations {
 
     Flux<Envelope> recentLogs(RecentLogsRequest request) {
         return get(builder -> builder.pathSegment("apps", request.getApplicationId(), "recentlogs"))
-            .flatMap(inbound -> inbound.addHandler(new MultipartDecoderChannelHandler(inbound)).receiveObject())
-            .takeWhile(t -> MultipartDecoderChannelHandler.CLOSE_DELIMITER != t)
-            .window()
-            .concatMap(w -> w
-                .takeWhile(t -> MultipartDecoderChannelHandler.DELIMITER != t)
-                .as(ByteBufFlux::fromInbound)
-                .aggregate()
-                .asByteArray(), Integer.MAX_VALUE)
+//            .flatMap(inbound -> inbound.addHandler(new MultipartDecoderChannelHandler(inbound)).receiveObject())
+//            .takeWhile(t -> MultipartDecoderChannelHandler.CLOSE_DELIMITER != t)
+//            .window()
+//            .concatMap(w -> w
+//                .takeWhile(t -> MultipartDecoderChannelHandler.DELIMITER != t)
+//                .as(ByteBufFlux::fromInbound)
+//                .aggregate()
+//                .asByteArray(), Integer.MAX_VALUE)
+            .flatMap(response -> MultipartCodec.decode(response).receive().retain().asByteArray())
+            .filter(b -> b.length > 0)
+            .log("stream.afterFilter")
             .map(ReactorDopplerEndpoints::toEnvelope);
     }
 
