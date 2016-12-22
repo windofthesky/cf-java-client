@@ -17,9 +17,9 @@
 package org.cloudfoundry.reactor.client;
 
 import org.cloudfoundry.QueryParameter;
-import org.springframework.core.annotation.AnnotationUtils;
-import org.springframework.util.ReflectionUtils;
-import org.springframework.web.util.UriComponentsBuilder;
+import org.cloudfoundry.reactor.util.spring.AnnotationUtils;
+import org.cloudfoundry.reactor.util.spring.ReflectionUtils;
+import org.cloudfoundry.reactor.util.spring.UriComponentsBuilder;
 
 import java.lang.reflect.Method;
 import java.util.Arrays;

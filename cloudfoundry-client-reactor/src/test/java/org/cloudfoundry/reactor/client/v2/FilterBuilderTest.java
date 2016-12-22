@@ -22,9 +22,9 @@ import org.cloudfoundry.client.v2.InFilterParameter;
 import org.cloudfoundry.client.v2.IsFilterParameter;
 import org.cloudfoundry.client.v2.LessThanFilterParameter;
 import org.cloudfoundry.client.v2.LessThanOrEqualToFilterParameter;
+import org.cloudfoundry.reactor.util.spring.MultiValueMap;
+import org.cloudfoundry.reactor.util.spring.UriComponentsBuilder;
 import org.junit.Test;
-import org.springframework.util.MultiValueMap;
-import org.springframework.web.util.UriComponentsBuilder;
 
 import java.util.Arrays;
 import java.util.Collections;

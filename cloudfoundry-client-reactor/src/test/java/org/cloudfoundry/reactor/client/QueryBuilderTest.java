@@ -17,9 +17,9 @@
 package org.cloudfoundry.reactor.client;
 
 import org.cloudfoundry.QueryParameter;
+import org.cloudfoundry.reactor.util.spring.MultiValueMap;
+import org.cloudfoundry.reactor.util.spring.UriComponentsBuilder;
 import org.junit.Test;
-import org.springframework.util.MultiValueMap;
-import org.springframework.web.util.UriComponentsBuilder;
 
 import java.util.Arrays;
 import java.util.List;

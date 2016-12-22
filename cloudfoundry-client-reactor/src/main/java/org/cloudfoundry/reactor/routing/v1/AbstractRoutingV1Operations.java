@@ -19,7 +19,7 @@ package org.cloudfoundry.reactor.routing.v1;
 import org.cloudfoundry.reactor.ConnectionContext;
 import org.cloudfoundry.reactor.TokenProvider;
 import org.cloudfoundry.reactor.util.AbstractReactorOperations;
-import org.springframework.web.util.UriComponentsBuilder;
+import org.cloudfoundry.reactor.util.spring.UriComponentsBuilder;
 import reactor.core.publisher.Mono;
 
 import java.util.function.Function;

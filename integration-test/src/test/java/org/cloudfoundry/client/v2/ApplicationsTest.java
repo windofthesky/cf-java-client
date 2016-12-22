@@ -66,7 +66,6 @@ import org.cloudfoundry.util.ResourceUtils;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.ClassPathResource;
-import org.springframework.util.Assert;
 import reactor.core.Exceptions;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
@@ -827,8 +826,6 @@ public final class ApplicationsTest extends AbstractIntegrationTest {
     }
 
     private static Consumer<Tuple2<String, AbstractApplicationResource>> applicationIdAndNameEquality(String name) {
-        Assert.notNull(name, "name must not be null");
-
         return consumer((applicationId, resource) -> {
             assertThat(ResourceUtils.getId(resource)).isEqualTo(applicationId);
             assertThat(ResourceUtils.getEntity(resource).getName()).isEqualTo(name);

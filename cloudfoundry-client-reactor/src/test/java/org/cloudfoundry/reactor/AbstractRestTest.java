@@ -24,10 +24,10 @@ import okhttp3.mockwebserver.Dispatcher;
 import okhttp3.mockwebserver.MockResponse;
 import okhttp3.mockwebserver.MockWebServer;
 import okhttp3.mockwebserver.RecordedRequest;
+import org.cloudfoundry.reactor.util.spring.UriComponentsBuilder;
 import org.junit.After;
 import org.junit.ComparisonFailure;
 import org.slf4j.bridge.SLF4JBridgeHandler;
-import org.springframework.web.util.UriComponentsBuilder;
 import reactor.core.publisher.Mono;
 import reactor.ipc.netty.http.client.HttpClient;
 

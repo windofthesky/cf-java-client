@@ -18,11 +18,11 @@ package org.cloudfoundry.reactor.client.v2;
 
 import org.cloudfoundry.client.v2.FilterParameter;
 import org.cloudfoundry.reactor.client.MethodNameComparator;
-import org.springframework.core.annotation.AnnotationUtils;
-import org.springframework.util.ObjectUtils;
-import org.springframework.util.ReflectionUtils;
-import org.springframework.util.StringUtils;
-import org.springframework.web.util.UriComponentsBuilder;
+import org.cloudfoundry.reactor.util.spring.AnnotationUtils;
+import org.cloudfoundry.reactor.util.spring.ObjectUtils;
+import org.cloudfoundry.reactor.util.spring.ReflectionUtils;
+import org.cloudfoundry.reactor.util.spring.StringUtils;
+import org.cloudfoundry.reactor.util.spring.UriComponentsBuilder;
 
 import java.lang.annotation.Annotation;
 import java.lang.reflect.Method;

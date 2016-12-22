@@ -16,10 +16,10 @@
 
 package org.cloudfoundry.reactor.util;
 
+import org.cloudfoundry.reactor.util.spring.StringUtils;
 import org.reactivestreams.Subscription;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.util.StringUtils;
 import reactor.core.publisher.Mono;
 import reactor.ipc.netty.http.client.HttpClientResponse;
 

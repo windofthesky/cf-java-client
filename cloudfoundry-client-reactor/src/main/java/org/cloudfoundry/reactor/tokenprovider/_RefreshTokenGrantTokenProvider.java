@@ -17,6 +17,7 @@
 package org.cloudfoundry.reactor.tokenprovider;
 
 import org.cloudfoundry.reactor.TokenProvider;
+import org.cloudfoundry.reactor.util.spring.UriComponentsBuilder;
 import org.immutables.value.Value;
 import reactor.ipc.netty.http.client.HttpClientRequest.Form;
 

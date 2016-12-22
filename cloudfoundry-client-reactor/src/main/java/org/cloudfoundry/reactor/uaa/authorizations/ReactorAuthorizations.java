@@ -20,6 +20,7 @@ import io.netty.util.AsciiString;
 import org.cloudfoundry.reactor.ConnectionContext;
 import org.cloudfoundry.reactor.TokenProvider;
 import org.cloudfoundry.reactor.uaa.AbstractUaaOperations;
+import org.cloudfoundry.reactor.util.spring.UriComponentsBuilder;
 import org.cloudfoundry.uaa.ResponseType;
 import org.cloudfoundry.uaa.authorizations.Authorizations;
 import org.cloudfoundry.uaa.authorizations.AuthorizeByAuthorizationCodeGrantApiRequest;
@@ -30,7 +31,6 @@ import org.cloudfoundry.uaa.authorizations.AuthorizeByOpenIdWithAuthorizationCod
 import org.cloudfoundry.uaa.authorizations.AuthorizeByOpenIdWithIdTokenRequest;
 import org.cloudfoundry.uaa.authorizations.AuthorizeByOpenIdWithImplicitGrantRequest;
 import org.cloudfoundry.util.ExceptionUtils;
-import org.springframework.web.util.UriComponentsBuilder;
 import reactor.core.publisher.Mono;
 
 import java.util.Optional;
